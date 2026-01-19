@@ -15,8 +15,7 @@ Successfully deployed Splunk Enterprise 10.2.0 on Windows 11 following a critica
 * Registry Remediation: Utilized PowerShell to purge orphaned product GUIDs from the `S-1-5-18` UserData hive after standard uninstallers failed.
 * Service Deadlock Recovery: Resolved an SCM "Waiting to start" hang by force-terminating zombied `splunkd` processes and clearing `.pid` lock files.
 * Credential Injection: Manually initialized the administrative security principal via `user-seed.conf` to bypass Web UI initialization failures.
-* 
-
+  
 ## Operational Milestones
 * Verified data ingestion for Windows System & Security event logs.
 * Developed custom search queries for hardware state monitoring (Kernel-Power).
