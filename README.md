@@ -9,9 +9,13 @@ Systems Administrator (Lab)
 Successfully deployed Splunk Enterprise 10.2.0 on Windows 11 following a critical MSI database corruption (Error 1610).
 
 ## Technical Challenges & Resolutions
+* Persistent Identity Resolution: Encountered a "Service Already Exist" deadlock during re-installatiin attempts. This took the most time!
+* Manual Stage Purging: Discovered that Splunk stores unique indentifiers in instance.cfg and identity.data that survive standard uninstalls.
+* Artifact Cleanup: Performed iterative manual purges of the etc/auth and var/lib/splunk directories to ensure the new installation could generate a fresh system identity.
 * Registry Remediation: Utilized PowerShell to purge orphaned product GUIDs from the `S-1-5-18` UserData hive after standard uninstallers failed.
 * Service Deadlock Recovery: Resolved an SCM "Waiting to start" hang by force-terminating zombied `splunkd` processes and clearing `.pid` lock files.
 * Credential Injection: Manually initialized the administrative security principal via `user-seed.conf` to bypass Web UI initialization failures.
+* 
 
 ## Operational Milestones
 * Verified data ingestion for Windows System & Security event logs.
