@@ -1,4 +1,4 @@
-# Splunk-Lab-Deployment
+# Splunk Lab Deployment
 Deployment & System Remediation Lab 
 Splunk Enterprise: Deployment & System Remediation Lab
 Date: January 19, 2026
